@@ -24,10 +24,7 @@ class MainActivity : Activity() {
         override fun onDraw(canvas: Canvas) {
             canvas.drawColor(Color.BLACK)
             for (c in contacts.values) {
-                canvas.save()
-                canvas.rotate(c.angle, c.x, c.y)
-                canvas.drawOval(c.x-c.rx, c.y-c.ry, c.x+c.rx, c.y+c.ry, paint)
-                canvas.restore()
+                canvas.drawCircle(c.x, c.y, min(c.rx, c.ry), paint)
             }
         }
         override fun onTouchEvent(event: MotionEvent): Boolean {
