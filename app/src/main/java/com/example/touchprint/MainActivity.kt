@@ -24,7 +24,7 @@ class MainActivity : Activity() {
         override fun onDraw(canvas: Canvas) {
             canvas.drawColor(Color.BLACK)
             for (c in contacts.values) {
-                canvas.drawCircle(c.x, c.y, min(c.rx, c.ry), paint)
+                canvas.drawCircle(c.x, c.y, min(c.rx, c.ry) * 0.5f, paint)
             }
         }
         override fun onTouchEvent(event: MotionEvent): Boolean {
